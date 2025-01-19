@@ -14,12 +14,10 @@ def fetch_gross_profit(ticker):
         options = webdriver.FirefoxOptions()
         options.add_argument('--ignore-certificate-errors')
         # options.add_argument('--headless')  # Disable headless mode to see the browser window
-        service = Service(executable_path='geckodriver')
+        service = Service(executable_path='./geckodriver')
         driver = webdriver.Firefox(service=service, options=options)
         driver.get(url)
-
         logging.info("Navigated to URL")
-
         # Accept cookies if the cookies acceptance page appears
         try:
             accept_cookies_button = WebDriverWait(driver, 10).until(
@@ -29,7 +27,6 @@ def fetch_gross_profit(ticker):
             logging.info("Accepted cookies")
         except Exception as e:
             logging.info("No cookies acceptance button found")
-
         # Click the "Quarterly" button using the correct XPath
         logging.info("Attempting to click the Quarterly button")
         quarterly_button = WebDriverWait(driver, 10).until(
@@ -37,10 +34,8 @@ def fetch_gross_profit(ticker):
         )
         quarterly_button.click()
         logging.info("Clicked Quarterly button")
-
         # Add a delay to ensure the page has enough time to load the quarterly data
         time.sleep(5)
-
         # Extract the quarterly gross profit data using the correct XPath
         logging.info("Attempting to extract quarterly gross profit data")
         quarterly_data_element = WebDriverWait(driver, 10).until(
@@ -48,7 +43,6 @@ def fetch_gross_profit(ticker):
         )
         quarterly_data = quarterly_data_element.text
         logging.info(f"Quarterly data: {quarterly_data}")
-
         driver.quit()
         return quarterly_data
     except Exception as e:
