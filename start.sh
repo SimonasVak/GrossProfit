@@ -1,3 +1,3 @@
 #!/bin/bash
-chmod +x drivers/geckodriver.exe
+chmod +x drivers/geckodriver
 gunicorn app:app
