@@ -1,12 +1,12 @@
-from flask import Flask, request
-from fetch_gross_profit import fetch_gross_profit
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/fetch_gross_profit')
-def get_gross_profit():
+@app.route('/fetch_gross_profit', methods=['GET'])
+def fetch_gross_profit():
     ticker = request.args.get('ticker')
-    return fetch_gross_profit(ticker)
+    # Your logic to fetch gross profit
+    return jsonify({'gross_profit': 'value'})
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
