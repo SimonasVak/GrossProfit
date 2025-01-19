@@ -20,6 +20,16 @@ def fetch_gross_profit(ticker):
 
         logging.info("Navigated to URL")
 
+        # Accept cookies if the cookies acceptance page appears
+        try:
+            accept_cookies_button = WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Accept')]"))
+            )
+            accept_cookies_button.click()
+            logging.info("Accepted cookies")
+        except Exception as e:
+            logging.info("No cookies acceptance button found")
+
         # Click the "Quarterly" button using the correct XPath
         logging.info("Attempting to click the Quarterly button")
         quarterly_button = WebDriverWait(driver, 10).until(
@@ -44,8 +54,3 @@ def fetch_gross_profit(ticker):
     except Exception as e:
         logging.error(f"Error fetching gross profit: {e}")
         return None
-
-if __name__ == "__main__":
-    import sys
-    ticker = sys.argv[1]
-    print(fetch_gross_profit(ticker))
