@@ -13,7 +13,15 @@ def get_gross_profit(ticker):
     # Your logic to fetch gross profit for the given ticker
     # For example, you might fetch data from an API or database
     # Replace the following line with actual fetched value
-    return "actual_gross_profit_value"
+    return fetch_actual_gross_profit(ticker)
+
+def fetch_actual_gross_profit(ticker):
+    # Example logic to fetch gross profit from an API
+    # Replace this with your actual implementation
+    import requests
+    response = requests.get(f"https://api.example.com/gross_profit?ticker={ticker}")
+    data = response.json()
+    return data['gross_profit']
 
 if __name__ == '__main__':
     app.run(debug=True)
