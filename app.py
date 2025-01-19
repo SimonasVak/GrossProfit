@@ -12,7 +12,8 @@ def fetch_gross_profit():
 def get_gross_profit(ticker):
     # Your logic to fetch gross profit for the given ticker
     # For example, you might fetch data from an API or database
-    return "123456"  # Replace this with actual fetched value
+    # Replace the following line with actual fetched value
+    return "actual_gross_profit_value"
 
 if __name__ == '__main__':
     app.run(debug=True)
