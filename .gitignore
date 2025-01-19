@@ -1,0 +1,39 @@
+AppData/
+Application Data/
+Cookies/
+Documents/My Music/
+Documents/My Pictures/
+Documents/My Videos/
+Local Settings/
+My Documents/
+NetHood/
+PrintHood/
+Recent/
+SendTo/
+Start Menu/
+Templates/
+.android/
+.cache/
+.emulator_console_auth_token
+.gitconfig
+.idlerc/
+.vscode/
+3D Objects/
+Contacts/
+Desktop/
+Documents/
+Downloads/
+Favorites/
+Links/
+Muse Hub/
+Music/
+NTUSER.DAT*
+OneDrive/
+Pictures/
+Saved Games/
+Searches/
+Videos/
+__pycache__/
+ntuser.dat.LOG1
+ntuser.dat.LOG2
+ntuser.ini
