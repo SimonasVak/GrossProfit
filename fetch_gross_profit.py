@@ -14,7 +14,7 @@ def fetch_gross_profit(ticker):
         options = webdriver.FirefoxOptions()
         options.add_argument('--ignore-certificate-errors')
         # options.add_argument('--headless')  # Disable headless mode to see the browser window
-        service = Service(executable_path='drivers/geckodriver.exe')
+        service = Service(executable_path='geckodriver')
         driver = webdriver.Firefox(service=service, options=options)
         driver.get(url)
 
