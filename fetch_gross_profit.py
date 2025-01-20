@@ -21,7 +21,7 @@ def fetch_gross_profit(ticker):
         # Accept cookies if the cookies acceptance page appears
         try:
             accept_cookies_button = WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Accept')]"))
+                EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Sutikti su visais')]"))
             )
             accept_cookies_button.click()
             logging.info("Accepted cookies")
